@@ -1,0 +1,27 @@
+* {
+    font-family: "ZedMono Nerd Font Mono";
+    font-size: 14px;
+}
+
+window#waybar {
+    background: #120D1A;
+    color: #F2EAFE;
+}
+
+#workspaces button {
+    color: #B9A9C9;
+    padding: 0 8px;
+}
+
+#workspaces button.active {
+    color: #B983FF;
+}
+
+#clock {
+    color: #D08FFF;
+}
+
+#battery {
+    color: #B983FF;
+}
+
