@@ -8,41 +8,42 @@
       "1": "38;2;185;131;255",
       "2": "38;2;208;143;255"
     },
-    "padding": {
-      "top": 1,
-      "left": 2,
-      "right": 3
+    "padding": { "top": 1, "left": 2, "right": 3 }
+  },
+
+  "display": {
+    "separator": "  ",
+    "color": {
+      "keys": "38;2;185;131;255",
+      "title": "38;2;208;143;255",
+      "output": "38;2;242;234;254",
+      "separator": "38;2;122;94;140"
     }
   },
 
   "modules": [
     "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "icons",
-    "font",
-    "cursor",
-    "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-    "swap",
-    "disk",
-    "localip",
-    "battery",
-    "poweradapter",
-    "locale",
+    "break",
+
+    { "type": "custom", "format": "\u001b[38;2;122;94;140m── \u001b[38;2;208;143;255mSistema \u001b[38;2;122;94;140m──────────────" },
+    { "type": "os",       "key": "\uf303  OS" },
+    { "type": "kernel",   "key": "\uf17c  Kernel" },
+    { "type": "uptime",   "key": "\uf017  Uptime" },
+    { "type": "packages", "key": "\uf487  Paquetes" },
+
+    { "type": "custom", "format": "\u001b[38;2;122;94;140m── \u001b[38;2;208;143;255mEntorno \u001b[38;2;122;94;140m──────────────" },
+    { "type": "de",       "key": "\uf108  DE" },
+    { "type": "wm",       "key": "\uf2d0  WM" },
+    { "type": "shell",    "key": "\uf489  Shell" },
+    { "type": "terminal", "key": "\uf120  Terminal" },
+
+    { "type": "custom", "format": "\u001b[38;2;122;94;140m── \u001b[38;2;208;143;255mHardware \u001b[38;2;122;94;140m─────────────" },
+    { "type": "cpu",     "key": "\uf4bc  CPU" },
+    { "type": "gpu", "key": "\uf2db  GPU" },
+    { "type": "memory",  "key": "\uefc5  RAM" },
+    { "type": "disk",    "key": "\uf0a0  Disco" },
+    { "type": "battery", "key": "\uf240  Batería" },
+
     "break",
     "colors"
   ]
