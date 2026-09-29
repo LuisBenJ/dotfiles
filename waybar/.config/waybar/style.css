@@ -1,27 +1,110 @@
 * {
-    font-family: "ZedMono Nerd Font Mono";
-    font-size: 14px;
+    font-family: "ZedMono Nerd Font Mono", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
 }
 
+/* La ventana contenedora principal se mantiene transparente */
 window#waybar {
-    background: #120D1A;
+    background: transparent;
     color: #F2EAFE;
+}
+
+/* Tooltips emergentes */
+tooltip {
+    background: #120D1A;
+    border: 1px solid #B983FF;
+    border-radius: 10px;
+}
+
+tooltip label {
+    color: #F2EAFE;
+    padding: 6px;
+}
+
+/* Estilo Base para cada módulo (efecto cápsula) */
+#workspaces,
+#clock,
+#network,
+#pulseaudio,
+#cpu,
+#memory,
+#battery {
+    background-color: rgba(18, 13, 26, 0.85);
+    border: 1px solid rgba(96, 69, 111, 0.6);
+    padding: 2px 12px;
+    margin: 4px 3px;
+    border-radius: 12px;
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 0px 4px;
 }
 
 #workspaces button {
     color: #B9A9C9;
-    padding: 0 8px;
+    padding: 0 6px;
+    border-radius: 10px;
 }
 
 #workspaces button.active {
     color: #B983FF;
+    background-color: rgba(185, 131, 255, 0.15);
 }
 
+#workspaces button:hover {
+    color: #D08FFF;
+    background-color: rgba(208, 143, 255, 0.1);
+}
+
+/* Reloj central en relieve */
 #clock {
     color: #D08FFF;
+    border-color: rgba(185, 131, 255, 0.5);
+    background-color: rgba(26, 16, 36, 0.9);
+}
+
+/* Módulos derecha */
+#network {
+    color: #D08FFF;
+}
+
+#pulseaudio {
+    color: #B983FF;
+}
+
+#cpu {
+    color: #B9A9C9;
+}
+
+#memory {
+    color: #B9A9C9;
 }
 
 #battery {
     color: #B983FF;
 }
 
+#battery.warning {
+    color: #f38ba8;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #f38ba8;
+        color: #120D1A;
+    }
+}
