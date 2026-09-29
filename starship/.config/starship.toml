@@ -1,0 +1,109 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "violet"
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$java\
+$gradle\
+$python\
+$nodejs\
+$rust\
+$golang\
+$docker_context\
+$package
+$character"""
+
+right_format = "$cmd_duration"
+
+[palettes.violet]
+primary   = "#B983FF"
+secondary = "#D08FFF"
+danger    = "#FF668C"
+warn      = "#F3C969"
+info      = "#7AA2F7"
+ok        = "#72E0A0"
+muted     = "#7A5E8C"
+
+[directory]
+style = "bold primary"
+format = "[$path]($style)[$read_only](danger) "
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " \U000f033e"
+
+[directory.substitutions]
+"Documents" = "\U000f0219 Documents"
+"Downloads" = "\uf019 Downloads"
+"Pictures"  = "\uf03e Pictures"
+
+[git_branch]
+symbol = "\ue0a0 "
+style = "secondary"
+format = "[on](muted) [$symbol$branch]($style) "
+
+[git_status]
+style = "danger"
+format = '([$all_status$ahead_behind]($style) )'
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "?"
+stashed = "\\$"
+modified = "!"
+staged = "+"
+deleted = "✘"
+
+[java]
+symbol = "\ue738 "
+style = "warn"
+format = "[via](muted) [$symbol$version]($style) "
+
+[gradle]
+symbol = "\ue660 "
+style = "info"
+format = "[via](muted) [$symbol$version]($style) "
+
+[python]
+symbol = "\ue73c "
+style = "ok"
+format = "[via](muted) [$symbol$version]($style) "
+
+[nodejs]
+symbol = "\ue718 "
+style = "ok"
+format = "[via](muted) [$symbol$version]($style) "
+
+[rust]
+symbol = "\ue7a8 "
+style = "warn"
+format = "[via](muted) [$symbol$version]($style) "
+
+[golang]
+symbol = "\ue724 "
+style = "info"
+format = "[via](muted) [$symbol$version]($style) "
+
+[docker_context]
+symbol = "\uf308 "
+style = "info"
+format = "[via](muted) [$symbol$context]($style) "
+
+[package]
+symbol = "\uf487 "
+style = "muted"
+format = "[$symbol$version]($style) "
+
+[cmd_duration]
+min_time = 2000
+style = "muted"
+format = "[\U000f051f $duration]($style)"
+
+[character]
+success_symbol = "[❯](bold primary)"
+error_symbol   = "[❯](bold danger)"
+vimcmd_symbol  = "[❮](bold secondary)"
